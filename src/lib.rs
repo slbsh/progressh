@@ -105,7 +105,7 @@ fn thread_loop(rx: mpsc::Receiver<Event>) {
             },
 
             Event::TestGELog(id, out) => {
-                if logs.iter().any(|log| log.id < id) {
+                if logs.iter().any(|log| log.id <= id) {
                     out.fetch_add(1, Ordering::Relaxed);
                 }
                 out.fetch_add(1, Ordering::Relaxed);
