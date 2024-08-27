@@ -1,0 +1,15 @@
+[package]
+name = "progressh"
+description = "Progress bar and logging handler"
+readme = "README.md"
+version = "0.1.0"
+edition = "2021"
+authors = ["slbsh"]
+license = "0BSD"
+
+[profile.release]
+lto = true
+panic = "abort"
+opt-level = "z"
+debug = false
+codegen-units = 1
